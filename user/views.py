@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserSignupForm
+from .forms import UserSignupForm, UserLoginForm
 
 def signup(request):
     if request.method == 'POST':
@@ -14,3 +14,11 @@ def signup(request):
     else:
         form = UserSignupForm()
     return render(request, 'user/signup.html', { 'form': form })
+
+
+def login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+    else:
+        form = UserLoginForm()
+        return render(request, 'user/login.html', { 'form': form })
