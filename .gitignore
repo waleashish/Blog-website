@@ -1,3 +1,5 @@
 # Default ignored files
 .idea
 **/__pycache__/
+.cache_ggshield
+blog_website/Constants.py
